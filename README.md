@@ -13,10 +13,36 @@ from the output file:
 ./code_analyzer code.cc codescheme.txt
 ```
 
-The representation range of the BigInt<size_t Base> data type encompasses any integer, positive or negative, that can be stored in machine memory.
-That is, the maximum range is limited by the maximum size that the system allows for the data structure where the digits are stored.
+The input file will be a syntactically correct C++ code file. The file
+output will summarize the structure of the input file: declared variables, loops used
+, comments included as well as an indication of the existence or not of a main.
 
-Using the BigInt<Base> data type, the program implements a calculator for expressions in inverse Polish notation.
+Regular expressions should be used to analyze the input source code
+and extract the following information:
+
+**1. Variable declaration:** declarations of variables of type int will be detected
+as well as those of type double. It will be assumed that each variable declaration will be made in
+a single line and that in each line we will have a single declaration. Therefore, 
+two or more variables will not be declared on the same line nor will they be considered
+variables declared within blocks as for loops because they are not found
+declared on a separate line. For each variable it will be stored, in addition
+of its type, its name, the line on which it is declared and whether or not it has been initialized in the
+own statement. A control will be kept of how many variables of each type have been
+defined in the program.
+
+**2. Use of loops:** loops of type for and loops of type
+while. For each loop detected, the type of loop and the line of code will be stored.
+in which it has been found. In addition, control will be kept of the number of loops of
+each type that have been used in the program.
+
+**3. Main program:** it will be detected whether or not there is a main function in the code
+analyzed source.
+
+**4. Comments:** all comments on one line (//) and multiple lines will be detected.
+The type of each comment will be stored, the
+line/s in which each one is located as well as the content of the comment itself.
+Furthermore, it will be taken into account that if at the beginning of the file there is a
+comment, that comment will be taken by default as a description of the program
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
