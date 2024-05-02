@@ -5,14 +5,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+C++ program that analyzes the content of code files using regular expressions.
+The program will receive through the command line the name of the input file and the name
+from the output file:
 
-In different fields of science there is a need to work with very big, or very small  numerical values.
-With this program im implementing data types in C++ to handle 
-very large numeric values, exceeding the representation range of the defined data types
-in standard language. To do this, the generic data type BigInt<size_t Base> is defined
-which represents integers using positional notation. In this numbering system, the value of a digit depends on its relative position and the base, which determines the number of
-digits needed to write any number. By default, the decimal system will be used
-(base 10), although it is also common to use the binary (base 2), octal (base 8) and hexadecimal (base 16).
+```
+./code_analyzer code.cc codescheme.txt
+```
 
 The representation range of the BigInt<size_t Base> data type encompasses any integer, positive or negative, that can be stored in machine memory.
 That is, the maximum range is limited by the maximum size that the system allows for the data structure where the digits are stored.
