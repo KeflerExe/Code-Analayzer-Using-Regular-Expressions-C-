@@ -13,11 +13,11 @@ from the output file:
 ./code_analyzer code.cc codescheme.txt
 ```
 
-The input file will be a syntactically correct C++ code file. The file
+The input file must be a syntactically correct C++ code file. The file
 output will summarize the structure of the input file: declared variables, loops used
 , comments included as well as an indication of the existence or not of a main.
 
-Regular expressions should be used to analyze the input source code
+Regular expressions are used to analyze the input source code
 and extract the following information:
 
 **1. Variable declaration:** declarations of variables of type int will be detected
